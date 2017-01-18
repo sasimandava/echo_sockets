@@ -1,4 +1,4 @@
-from echo_client import client
+from sm_echo_client import client
 import socket
 import unittest
 
@@ -26,7 +26,7 @@ class EchoTestCase(unittest.TestCase):
         actual = self.send_message(expected)
         self.assertEqual(
             expected,
-            actual.decode('utf8'),  # added decode('utf8')
+            actual,
             "\n expected {0}, got {1}".format(expected, actual)
         )
 
@@ -36,7 +36,7 @@ class EchoTestCase(unittest.TestCase):
         actual = self.send_message(expected)
         self.assertEqual(
             expected,
-            actual.decode('utf8'),   # added decode('utf8')
+            actual,
             "\n expected {0}, got {1}".format(expected, actual)
         )
 

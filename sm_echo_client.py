@@ -52,7 +52,7 @@ def client(msg, log_buffer=sys.stderr):
             # print('received "{0}"'.format(chunk_part.decode('utf8')), file=log_buffer)
             if len(chunk_part) < 16:
                 done = True
-                sock.close()
+                # sock.close()
             received_message += chunk_part
         print('received "{0}"'.format(received_message.decode('utf8')), file=log_buffer)
 
@@ -65,8 +65,8 @@ def client(msg, log_buffer=sys.stderr):
 
         # TODO_COMPLETE: when all is said and done, you should return the entire reply
         # you received from the server as the return value of this function.
-        print("received_message:", received_message)
-        return(received_message)
+        # print("received_message:", received_message)
+        return(received_message.decode('utf8'))
 
 
 if __name__ == '__main__':
